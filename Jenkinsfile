@@ -24,7 +24,6 @@ pipeline {
             }
         }
         stage('Push Docker Image') {
-           
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
@@ -35,7 +34,6 @@ pipeline {
             }
         }
         stage('DeployToProduction') {
-           
             steps {
                 input 'Deploy to Production?'
                 milestone(1)
